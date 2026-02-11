@@ -2,6 +2,7 @@
   "categories": {
     "cloud-storage": { "name": "Cloud Storage", "description": "File storage and sync services" },
     "email": { "name": "Email", "description": "Email providers and services" },
+    "mail-client": { "name": "Mail Client", "description": "Desktop and mobile email clients" },
     "search-engine": { "name": "Search Engine", "description": "Web search engines" },
     "social-media": { "name": "Social Media", "description": "Social networking platforms" },
     "messaging": { "name": "Messaging", "description": "Instant messaging and communication" },
@@ -69,7 +70,7 @@
       "description": "Dutch privacy-first search engine that delivers Google search results without tracking, logging IP addresses, or storing personal data. Features an Anonymous View proxy for browsing search results with full anonymity, and has held the European Privacy Seal since 2011."
     },
     "lumo": {
-      "description": "Privacy-first AI assistant from the makers of Proton Mail. Lumo keeps every conversation confidential with zero-access encryption, never logs prompts or responses, and never uses your data to train models — a stark contrast to US-based AI chatbots."
+      "description": "Swiss AI assistant from Proton focused on private chat workflows. Lumo uses zero-access encrypted history, no-training defaults, and optional web search, while trust reviews should still account for open-source-scope debates and Proton-wide outage history."
     },
     "ecosia": {
       "description": "Berlin-based search engine that donates at least 80% of its profits to tree-planting projects worldwide, having funded over 200 million trees since 2009. A certified B Corp under steward-ownership, Ecosia runs on 100% renewable energy and offers a privacy-friendly alternative to US search giants."

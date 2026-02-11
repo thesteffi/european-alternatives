@@ -16,6 +16,13 @@ export const categories: Category[] = [
     usGiants: ['Gmail', 'Outlook', 'Yahoo Mail'],
   },
   {
+    id: 'mail-client',
+    name: 'Mail Client',
+    description: 'Desktop and mobile email clients',
+    emoji: '📨',
+    usGiants: ['Outlook'],
+  },
+  {
     id: 'search-engine',
     name: 'Search Engine',
     description: 'Web search engines',

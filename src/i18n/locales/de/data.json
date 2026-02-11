@@ -2,6 +2,7 @@
   "categories": {
     "cloud-storage": { "name": "Cloud-Speicher", "description": "Dateispeicher- und Synchronisierungsdienste" },
     "email": { "name": "E-Mail", "description": "E-Mail-Anbieter und -Dienste" },
+    "mail-client": { "name": "Mail-Client", "description": "Desktop- und mobile E-Mail-Clients" },
     "search-engine": { "name": "Suchmaschine", "description": "Web-Suchmaschinen" },
     "social-media": { "name": "Soziale Medien", "description": "Soziale Netzwerke und Plattformen" },
     "messaging": { "name": "Messaging", "description": "Instant Messaging und Kommunikation" },
@@ -69,7 +70,7 @@
       "description": "Niederländische Suchmaschine mit Fokus auf Datenschutz, die Google-Suchergebnisse liefert, ohne zu tracken, IP-Adressen zu speichern oder persönliche Daten zu erfassen. Bietet einen Anonymous-View-Proxy zum anonymen Durchsuchen von Ergebnissen und trägt seit 2011 das Europäische Datenschutzsiegel."
     },
     "lumo": {
-      "description": "Datenschutzorientierter KI-Assistent von den Machern von Proton Mail. Lumo hält jede Konversation mit Zero-Access-Verschlüsselung vertraulich, speichert weder Eingaben noch Antworten und verwendet Ihre Daten niemals zum Trainieren von Modellen — ein deutlicher Gegensatz zu US-amerikanischen KI-Chatbots."
+      "description": "Schweizer KI-Assistent von Proton mit Fokus auf private Chat-Workflows. Lumo nutzt Zero-Access-verschluesselte Verlaufsdaten, No-Training-Defaults und optionale Websuche, waehrend Trust-Reviews weiterhin Debatten zum Open-Source-Umfang und die Proton-weite Outage-Historie beruecksichtigen sollten."
     },
     "ecosia": {
       "description": "Berliner Suchmaschine, die mindestens 80 % ihrer Gewinne an Baumpflanzprojekte weltweit spendet und seit 2009 über 200 Millionen Bäume finanziert hat. Als zertifiziertes B Corp in Verantwortungseigentum betreibt Ecosia seine Dienste mit 100 % erneuerbarer Energie und bietet eine datenschutzfreundliche Alternative zu US-Suchmaschinen."

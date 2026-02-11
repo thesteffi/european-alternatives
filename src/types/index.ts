@@ -55,6 +55,7 @@ export type CountryCode =
 export type CategoryId =
   | 'cloud-storage'
   | 'email'
+  | 'mail-client'
   | 'search-engine'
   | 'social-media'
   | 'messaging'

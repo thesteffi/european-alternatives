@@ -924,26 +924,31 @@ export const researchAlternatives: Alternative[] = [
     "id": "nordvpn",
     "name": "NordVPN",
     "category": "vpn",
-    "country": "lt",
+    "country": "nl",
     "replacesUS": [
       "ExpressVPN"
     ],
     "pricing": "paid",
     "website": "https://nordvpn.com",
-    "description": "Major VPN provider with a dual structure: legal jurisdiction in Panama and operational headquarters in Vilnius, Lithuania. NordVPN operates a large global server network and NordLynx (WireGuard-based), but service transparency still depends primarily on audits and corporate disclosures rather than open server code.",
+    "description": "Large VPN provider under Nord Security (Amsterdam with major operations in Vilnius), with a global server network and the NordLynx protocol (WireGuard-based). The Linux client is open-source under GPL-3.0, while core backend and server infrastructure remain proprietary, so trust depends on audits, disclosures, and contract terms.",
     "localizedDescriptions": {
-      "de": "Europas größtes Cybersicherheits-Einhorn mit über 7.000 Servern in 118 Ländern und dem eigenen NordLynx-Protokoll auf WireGuard-Basis. Nord Security hat seinen Hauptsitz in Amsterdam mit dem operativen Zentrum in Vilnius, Litauen, wo die litauischen Gründer das Produkt von Grund auf entwickelt haben."
+      "de": "Grosser VPN-Anbieter unter Nord Security (Amsterdam mit starkem operativen Zentrum in Vilnius) mit globalem Servernetz und dem NordLynx-Protokoll auf WireGuard-Basis. Der Linux-Client ist unter GPL-3.0 quelloffen, waehrend Backend und Server-Infrastruktur proprietaer bleiben. Vertrauen haengt daher stark von Audits, Offenlegung und fairen Vertragsbedingungen ab."
     },
-    "isOpenSource": false,
-    "openSourceLevel": "none",
+    "isOpenSource": true,
+    "openSourceLevel": "partial",
     "tags": [
       "vpn",
       "paid",
-      "proprietary",
+      "privacy",
+      "no-logs",
+      "wireguard",
+      "partial-open-source",
       "expressvpn"
     ],
     "foundedYear": 2012,
-    "headquartersCity": "Vilnius (operations); Panama (legal jurisdiction)"
+    "headquartersCity": "Amsterdam (HQ); Vilnius (operations)",
+    "githubUrl": "https://github.com/NordSecurity/nordvpn-linux",
+    "license": "GPL-3.0 (Linux client); proprietary backend and infrastructure"
   },
   {
     "id": "ollama",
@@ -957,9 +962,9 @@ export const researchAlternatives: Alternative[] = [
     ],
     "pricing": "freemium",
     "website": "https://ollama.com",
-    "description": "US-based but fully open-source tool for running large language models locally on your own hardware. Ollama keeps your data fully private with no cloud dependency, offers an OpenAI-compatible API, and supports hundreds of open models including Llama, Mistral, Gemma, and DeepSeek. Note: Ollama is headquartered in the US but included here for its open-source nature and fully local execution.",
+    "description": "US-based but fully open-source (MIT) local-first runtime for running large language models on your own hardware. Ollama can run fully offline and also provides optional cloud models and paid plans when you need bigger remote capacity. Note: Ollama is headquartered in the US but included here for its open-source nature and strong local execution path.",
     "localizedDescriptions": {
-      "de": "In den USA ansässiges, aber vollständig quelloffenes Tool zum lokalen Ausführen großer Sprachmodelle auf eigener Hardware. Ollama bewahrt vollständige Datensouveränität ohne Cloud-Abhängigkeit, bietet eine OpenAI-kompatible API und unterstützt hunderte offene Modelle wie Llama, Mistral, Gemma und DeepSeek. Hinweis: Ollama hat seinen Sitz in den USA, wird aber aufgrund seiner Open-Source-Natur und vollständig lokalen Ausführung hier gelistet."
+      "de": "In den USA ansaessiges, aber vollstaendig quelloffenes (MIT) Local-First-Tool zum Ausfuehren grosser Sprachmodelle auf eigener Hardware. Ollama kann komplett offline laufen und bietet optional Cloud-Modelle sowie bezahlte Plaene fuer mehr remote Rechenkapazitaet. Hinweis: Ollama hat seinen Sitz in den USA, wird aber wegen des Open-Source-Kerns und des starken lokalen Betriebswegs hier gelistet."
     },
     "isOpenSource": true,
     "openSourceLevel": "full",
@@ -1387,9 +1392,9 @@ export const researchAlternatives: Alternative[] = [
     ],
     "pricing": "freemium",
     "website": "https://proton.me/mail",
-    "description": "Swiss encrypted email born at CERN, offering end-to-end and zero-access encryption with client apps that are open source and audited. Under Swiss law, Proton can still be compelled to perform targeted lawful interception for specific accounts, while blanket retention obligations were rejected in court.",
+    "description": "Swiss encrypted email service by Proton AG with end-to-end and zero-access encryption, open-source clients, and a public legal transparency report. Swiss court orders can still compel targeted metadata logging for specific accounts, and parts of the service stack remain outside fully reproducible open builds.",
     "localizedDescriptions": {
-      "de": "Verschlüsselter E-Mail-Dienst aus der Schweiz, entstanden am CERN, mit Ende-zu-Ende- und Zero-Access-Verschlüsselung — nicht einmal Proton selbst kann Ihre Nachrichten lesen. Mit kostenlosem Tarif, quelloffenen Clients und Servern unter Schweizer Datenschutzrecht ist er die beliebteste datenschutzfreundliche Alternative zu Gmail und Outlook."
+      "de": "Verschluesselter E-Mail-Dienst aus der Schweiz von Proton AG mit Ende-zu-Ende- und Zero-Access-Verschluesselung, quelloffenen Clients und oeffentlichem Transparenzbericht. Gueltige Schweizer Gerichtsanordnungen koennen dennoch gezieltes Metadaten-Logging erzwingen, und Teile des Stacks sind weiterhin nicht voll reproduzierbar offen buildbar."
     },
     "isOpenSource": true,
     "openSourceLevel": "partial",
@@ -1450,9 +1455,9 @@ export const researchAlternatives: Alternative[] = [
     ],
     "pricing": "freemium",
     "website": "https://protonvpn.com",
-    "description": "Swiss VPN from Proton AG with a large free tier, Secure Core multi-hop routing, and audited client apps. Proton states that VPN services operate under different Swiss retention obligations than email, but the backend service itself remains proprietary.",
+    "description": "Swiss VPN from Proton AG with a large free tier, Secure Core multi-hop routing, open-source apps, recurring third-party no-logs audits, and reported ISO 27001 plus SOC 2 Type II assurance. Trade-offs remain around recurring high-severity client CVEs and auto-renewal at then-current pricing, so patch hygiene and renewal checks are still required.",
     "localizedDescriptions": {
-      "de": "Schweizer Hochgeschwindigkeits-VPN von den Machern von Proton Mail, betrieben von der gemeinnützigen Proton AG unter strengem Schweizer Datenschutzrecht. Bietet eine echte, unbegrenzte Gratis-Stufe ohne Werbung und ohne Datenlimit sowie Secure-Core-Multi-Hop-Routing und NetShield-Werbeblocker in den Bezahlplänen."
+      "de": "Schweizer VPN von Proton AG mit grosser Gratis-Stufe, Secure-Core-Multi-Hop-Routing, Open-Source-Apps, wiederkehrenden No-Logs-Audits durch Dritte sowie gemeldeten ISO-27001- und SOC-2-Type-II-Nachweisen. Relevante Trade-offs bleiben wiederkehrende High-Severity-Client-CVEs und Auto-Renew zum dann gueltigen Preis, daher sind Patch-Disziplin und aktive Vertragskontrolle wichtig."
     },
     "isOpenSource": true,
     "openSourceLevel": "partial",
@@ -1508,9 +1513,9 @@ export const researchAlternatives: Alternative[] = [
     ],
     "pricing": "freemium",
     "website": "https://www.scaleway.com",
-    "description": "Developer-friendly French cloud provider and Iliad Group subsidiary offering compute, storage, managed databases, serverless functions, and GPU instances for AI workloads — all hosted in EU data centers with transparent pricing and generous free tiers.",
+    "description": "French cloud provider in the Iliad Group with EU-only data centers, broad IaaS/PaaS coverage, and strong compliance signals (including ISO 27001 and HDS). Scaleway also states it does not train AI models on customer data by default, but users should actively monitor pricing changes and support/incident handling quality.",
     "localizedDescriptions": {
-      "de": "Entwicklerfreundlicher französischer Cloud-Anbieter und Tochtergesellschaft der Iliad-Gruppe mit Compute, Storage, Managed Databases, Serverless Functions und GPU-Instanzen für KI-Workloads — alles in EU-Rechenzentren mit transparenter Preisgestaltung und großzügigen Free Tiers."
+      "de": "Franzoesischer Cloud-Anbieter der Iliad-Gruppe mit EU-only-Rechenzentren, breitem IaaS/PaaS-Portfolio und starken Compliance-Signalen (u. a. ISO 27001 und HDS). Scaleway gibt zudem an, Kundendaten standardmaessig nicht fuer KI-Modelltraining zu nutzen, dennoch sollten Preisveraenderungen sowie Support- und Incident-Qualitaet aktiv beobachtet werden."
     },
     "isOpenSource": false,
     "openSourceLevel": "none",
@@ -1519,7 +1524,8 @@ export const researchAlternatives: Alternative[] = [
       "freemium",
       "cloud",
       "aws",
-      "google-cloud"
+      "google-cloud",
+      "gdpr"
     ],
     "foundedYear": 1999,
     "headquartersCity": "Paris"
@@ -1625,9 +1631,9 @@ export const researchAlternatives: Alternative[] = [
     ],
     "pricing": "paid",
     "website": "https://www.startmail.com",
-    "description": "Dutch private email service created by the founders of the Startpage search engine. Offers unlimited disposable aliases, built-in PGP encryption, and full IMAP support, with all data stored in the Netherlands under Dutch and EU privacy law.",
+    "description": "Dutch privacy-focused email service with unlimited aliases, built-in PGP support, and full IMAP access for exportability. Core mailbox data is hosted in the Netherlands, while payment and anti-abuse flows use selected third-party processors.",
     "localizedDescriptions": {
-      "de": "Niederländischer privater E-Mail-Dienst, entwickelt von den Gründern der Suchmaschine Startpage. Bietet unbegrenzte Wegwerf-Aliase, eingebaute PGP-Verschlüsselung und volle IMAP-Unterstützung — alle Daten werden in den Niederlanden unter niederländischem und EU-Datenschutzrecht gespeichert."
+      "de": "Niederlaendischer, auf Privatsphaere ausgerichteter E-Mail-Dienst mit unbegrenzten Aliasen, integrierter PGP-Unterstuetzung und vollem IMAP-Zugriff fuer den Datenexport. Kerndaten des Postfachs liegen in den Niederlanden, waehrend Zahlungs- und Abuse-Schutz-Prozesse ueber ausgewaehlte Drittanbieter laufen."
     },
     "isOpenSource": false,
     "openSourceLevel": "none",
