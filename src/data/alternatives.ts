@@ -5,6 +5,26 @@ import { reservationsById, trustScoresById } from './trustOverrides';
 import { calculateTrustScore } from '../utils/trustScore';
 import { buildUSVendorComparisons } from './usVendors';
 
+const pricingLikeTags = new Set(['free', 'freemium', 'paid', 'free and paid']);
+
+function sanitizeTags(tags: string[]): string[] {
+  const seen = new Set<string>();
+  const sanitized: string[] = [];
+
+  for (const tag of tags) {
+    const trimmed = tag.trim();
+    if (!trimmed) continue;
+
+    const normalized = trimmed.toLowerCase();
+    if (pricingLikeTags.has(normalized) || seen.has(normalized)) continue;
+
+    seen.add(normalized);
+    sanitized.push(trimmed);
+  }
+
+  return sanitized;
+}
+
 function mergeCatalogue(): Alternative[] {
   const deduped = new Map<string, Alternative>();
 
@@ -16,12 +36,13 @@ function mergeCatalogue(): Alternative[] {
   }
 
   const merged = Array.from(deduped.values()).map((alternative) => {
+    const tags = sanitizeTags(alternative.tags);
     const reservations = alternative.reservations ?? reservationsById[alternative.id] ?? [];
     const computedTrustScore = calculateTrustScore({
       country: alternative.country,
       isOpenSource: alternative.isOpenSource,
       openSourceLevel: alternative.openSourceLevel,
-      tags: alternative.tags,
+      tags,
       reservations,
     });
     const trustScore = trustScoresById[alternative.id];
@@ -29,6 +50,7 @@ function mergeCatalogue(): Alternative[] {
 
     return {
       ...alternative,
+      tags,
       logo: alternative.logo ?? `/logos/${alternative.id}.svg`,
       reservations,
       trustScore,

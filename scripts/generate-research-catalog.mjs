@@ -54,6 +54,7 @@ function parseOpenSourceLevel(raw) {
 function parsePricing(raw) {
   const low = raw.toLowerCase();
   if (low.startsWith('freemium')) return 'freemium';
+  if (/\bfree\b/.test(low) && /\bpaid\b/.test(low)) return 'paid';
   if (low.startsWith('free')) return 'free';
   return 'paid';
 }
@@ -116,28 +117,41 @@ const keywordToTag = [
   ['project', 'project-management'],
 ];
 
+const pricingLikeTags = new Set(['free', 'freemium', 'paid', 'free and paid']);
+
+function addTag(tagList, seenNormalized, tag) {
+  const trimmed = tag.trim();
+  if (!trimmed) return;
+
+  const normalized = trimmed.toLowerCase();
+  if (pricingLikeTags.has(normalized) || seenNormalized.has(normalized)) return;
+
+  seenNormalized.add(normalized);
+  tagList.push(trimmed);
+}
+
 function generateTags(entry) {
-  const tags = new Set();
-  tags.add(entry.category);
-  tags.add(entry.pricing);
+  const tags = [];
+  const seenNormalized = new Set();
+  addTag(tags, seenNormalized, entry.category);
 
   if (entry.openSourceLevel !== 'none') {
-    tags.add('open-source');
+    addTag(tags, seenNormalized, 'open-source');
   }
 
   const haystack = `${entry.description} ${entry.name}`.toLowerCase();
   for (const [needle, tag] of keywordToTag) {
     if (haystack.includes(needle)) {
-      tags.add(tag);
+      addTag(tags, seenNormalized, tag);
     }
   }
 
   for (const replace of entry.replacesUS.slice(0, 2)) {
     const normalized = replace.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    if (normalized) tags.add(normalized);
+    if (normalized) addTag(tags, seenNormalized, normalized);
   }
 
-  return Array.from(tags).slice(0, 8);
+  return tags.slice(0, 8);
 }
 
 function slugifyName(name) {
