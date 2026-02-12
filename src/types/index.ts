@@ -1,3 +1,8 @@
+export interface AlternativeActionLink {
+  label: string;
+  url: string;
+}
+
 export interface Alternative {
   id: string;
   name: string;
@@ -14,6 +19,7 @@ export interface Alternative {
   isOpenSource: boolean;
   openSourceLevel?: OpenSourceLevel;
   sourceCodeUrl?: string;
+  actionLinks?: AlternativeActionLink[];
   pricing: 'free' | 'freemium' | 'paid';
   tags: string[];
   foundedYear?: number;

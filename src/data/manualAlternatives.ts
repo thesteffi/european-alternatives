@@ -451,6 +451,12 @@ export const manualAlternatives: Alternative[] = [
     isOpenSource: true,
     openSourceLevel: 'full',
     sourceCodeUrl: 'https://github.com/torvalds/linux',
+    actionLinks: [
+      {
+        label: 'Linux Chooser',
+        url: 'https://themorpheus407.github.io/LinuxChooser/',
+      },
+    ],
     pricing: 'free',
     tags: ['desktop-os', 'operating-system', 'kernel', 'open-source', 'self-hosting', 'lts', 'security'],
     foundedYear: 1991,

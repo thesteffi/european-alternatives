@@ -315,6 +315,22 @@ export default function AlternativeCard({ alternative, viewMode }: AlternativeCa
                     {t('browse:card.sourceCodeLabel')}
                   </a>
                 )}
+                {alternative.actionLinks?.map((link) => (
+                  <a
+                    key={`${alternative.id}-${link.url}`}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="alt-card-link alt-card-link-secondary"
+                    aria-label={t('browse:card.visitWebsite', { name: link.label })}
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/>
+                      <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"/>
+                    </svg>
+                    {link.label}
+                  </a>
+                ))}
               </div>
             </div>
           </motion.div>
